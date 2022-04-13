@@ -19,6 +19,14 @@
 1. Git install
     1. [Window_Git_Install](https://gitforwindows.org) 확인
     1. [Mac_Git_Install](https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Git-%EC%84%A4%EC%B9%98) 확인
+    1. git 설치 확인 명령문
+
+```bash
+# git의 버전확인으로 쉽게 확인할 수 있다.
+$ git --version
+```
 1. Git 구조 이해
+<br/>
 ![HEROPY](../resource/GitProcess.png)
+_ETC. Git은 파일단위가 아닌 파일의 라인단위로 추적한다(즉, 폴더를 만들어도 추적 불가)_
 
