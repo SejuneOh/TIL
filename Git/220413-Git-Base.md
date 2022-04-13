@@ -7,6 +7,8 @@
 - git bash와 친해지기
 - git 대략적인 역사
 
+---
+
 ### Git은 왜 사용하는가
 - git은 형상관리 즉, 소스 및 많은 개발자들이 개발의 편의하게 만들어진 형상관리 프로그램이다 
   - VSC(Version Control Sytem), SCM(Source Code Management)라고 부른다, 추가적으로 상위 개념인 Software Configuration Management)가 있다.
@@ -26,8 +28,5 @@
 $ git --version
 ```
 - Git 구조 이해
-<br/>
 ![HEROPY](../resource/GitProcess.png)  
-
-_ETC. Git은 파일단위가 아닌 파일의 라인단위로 추적한다(즉, 폴더를 만들어도 추적 불가)_
 
