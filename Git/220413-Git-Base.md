@@ -4,6 +4,7 @@
 - git을 왜 사용하는가?
 - git을 사용하기 위해서 CLI Command 사용방법
 - git과 github의 차이의 이해 
+- git bash와 친해지기
 - git 대략적인 역사
 
 ### Git은 왜 사용하는가
@@ -18,3 +19,6 @@
 1. Git install
     1. [Window_Git_Install](https://gitforwindows.org) 확인
     1. [Mac_Git_Install](https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Git-%EC%84%A4%EC%B9%98) 확인
+1. Git 구조 이해
+![HEROPY](../resource/GitProcess.png)
+
