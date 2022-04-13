@@ -30,5 +30,30 @@ $ git --version
 - Git 구조 이해
 ![HEROPY](../resource/GitProcess.png) 
 
-- TEST 
+- Git은 Local 컴퓨터에서 파일의 라인단위로 추적하여 형상관리하고, 해당 형상관리를 서버에서 관리할 수 있도록  
+지원 해주는 서비스가 Github이다.
+
+---
+
+### Git bash와 친해지기
+
+- git 초기화(생성)
+```bash
+ $ git init
+``` 
+- git 상태확인
+```bash
+# 파일의 라인단위로 추적하여 변경 및 수정된 파일을 찾는다.
+$ git status
+```
+-git 업로드 상태만들기
+```bash
+# git의 commit할 파일을 올리는 상태로 변경해준다. 단, 업무의 연관성 및 내용을 구분하여 
+# commit 을 해야하기 때문에 add할 때, 잘 나눠야한다
+```
+- git commit
+```bash
+# -m flag는 사용하지 말자 이유는, 수정이 불가능하고, 다른 사람의 commit 내용이 overwrite 되기때문
+$ git commit
+```
 
