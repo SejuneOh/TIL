@@ -5,7 +5,6 @@
 - git을 사용하기 위해서 CLI Command 사용방법
 - git과 github의 차이의 이해 
 - git bash와 친해지기
-- git 대략적인 역사
 
 ---
 
@@ -86,5 +85,25 @@ $ git remote add origin (github url)
 # branch 권한으로 origin 원격저장소에 파일 전송
 $ git push origin branchName
 ```
-
+- git clone 
+```bash
+$ git clone gitURL 
 ```
+---
+- git 올바른 commit 순서
+1. local에서 커밋관련 수정파일 상태확인(연관성 확인) 
+1. 올라가는 파일 저장 (파일의 라인단위 업무연관성 단위)
+1. 저장된 파일 commit 
+1. remote에 파일 업로드
+--- 
+
+### Etc...
+- git GUI Client 
+    - git gui
+    - sourcetree
+    - kraken 
+    - smartGit
+- remote repository service
+    - github
+    - bitbucket
+    - gitlab
