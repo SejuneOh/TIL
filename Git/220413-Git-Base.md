@@ -37,6 +37,28 @@ $ git --version
 
 ### Git bash와 친해지기
 
+- git 초기설정 
+```bash
+# git 자동개행 설정 git/설정/범위 전역/무엇/실행여부 
+$ git config --global core.autocrlf (input/true)# [Mac/Win]  
+
+# 사용자 이름 설정(github 계정과 동일시)
+$ git config --global user.name 'userName'  
+
+# 유저 이름 설정 삭제(github 계정과 동일시)
+$ git config --global --unset user.name  
+
+# editor 설정
+$ git config --global core.editor "vim" 
+
+# 보는 환경
+$ git config --global core.pager "cat"
+
+#초기 설정 확인
+$ git config --global --list
+
+```
+
 - git 초기화(생성)
 ```bash
  $ git init
@@ -46,7 +68,7 @@ $ git --version
 # 파일의 라인단위로 추적하여 변경 및 수정된 파일을 찾는다.
 $ git status
 ```
--git 업로드 상태만들기
+- git 업로드 상태만들기
 ```bash
 # git의 commit할 파일을 올리는 상태로 변경해준다. 단, 업무의 연관성 및 내용을 구분하여 
 # commit 을 해야하기 때문에 add할 때, 잘 나눠야한다
@@ -56,4 +78,13 @@ $ git status
 # -m flag는 사용하지 말자 이유는, 수정이 불가능하고, 다른 사람의 commit 내용이 overwrite 되기때문
 $ git commit
 ```
+- git connect github
+```bash
+# 원격 저장소 연결
+$ git remote add origin (github url) 
 
+# branch 권한으로 origin 원격저장소에 파일 전송
+$ git push origin branchName
+```
+
+```
