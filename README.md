@@ -1,5 +1,6 @@
 # TIL (Today I Learn)
 
 
-## Procject  Resolution
-- I will be great Developer in Front_End world. 
+## 목표 오늘한 일은 오늘 끝내자
+- Git
+- Hexo(Make Hexo Blog)
