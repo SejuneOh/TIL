@@ -16,17 +16,17 @@
   - 비선형적 개발 가능(브랜치를 이용한 다중 작업가능)
 
 ### Git을 사용하기 위해서 CLI Command 사용방법
-1. Git install
-    1. [Window_Git_Install](https://gitforwindows.org) 확인
-    1. [Mac_Git_Install](https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Git-%EC%84%A4%EC%B9%98) 확인
-    1. git 설치 확인 명령문
+- Git install
+    - [Window_Git_Install](https://gitforwindows.org) 확인
+    - [Mac_Git_Install](https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Git-%EC%84%A4%EC%B9%98) 확인
+    - git 설치 확인 명령문
 
 ```bash
 # git의 버전확인으로 쉽게 확인할 수 있다.
 $ git --version
 ```
-1. Git 구조 이해
+- Git 구조 이해
 <br/>
-![HEROPY](../resource/GitProcess.png)
+![HEROPY](../resource/GitProcess.png)<br/>
 _ETC. Git은 파일단위가 아닌 파일의 라인단위로 추적한다(즉, 폴더를 만들어도 추적 불가)_
 
