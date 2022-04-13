@@ -27,6 +27,7 @@ $ git --version
 ```
 - Git 구조 이해
 <br/>
-![HEROPY](../resource/GitProcess.png)<br/>
+![HEROPY](../resource/GitProcess.png)  
+
 _ETC. Git은 파일단위가 아닌 파일의 라인단위로 추적한다(즉, 폴더를 만들어도 추적 불가)_
 
