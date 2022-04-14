@@ -10,7 +10,7 @@
 
 ### Git은 왜 사용하는가
 - git은 형상관리 즉, 소스 및 많은 개발자들이 개발의 편의하게 만들어진 형상관리 프로그램이다 
-  - VSC(Version Control Sytem), SCM(Source Code Management)라고 부른다, 추가적으로 상위 개념인 Software Configuration Management)가 있다.
+  - VSC(Version Control Sytem), SCM(Source Code Management)라고 부른다, 추가적으로 상위 개념인 SCM(Software Configuration Management)가 있다.
 - Git을 사용하는 이유가 되는 장점 
   - 빠른속도, 단순한 구조 
   - 분산형 저장소 지원
