@@ -13,6 +13,7 @@ Branch의 명령어를 같이 보면서 내용을 확인하자
 ```
 
 - repo 원격 branch 확인
+  :
 
 ```bash
  # 원격 브랜치 확인
@@ -46,6 +47,19 @@ Branch의 명령어를 같이 보면서 내용을 확인하자
 
 ```bash
 $ git branch -D DeleteName
+```
+
+- remote에 local 처음 branch push하기
+
+```bash
+# -u flag는 remote와 local의 branch 싱크를 맞춰 달라고하는 것이다.
+$ git push -u origin branchNm
+```
+
+- branch의 차이 확인하기
+
+```bash
+$ git diff main branchNm
 ```
 
 ---
