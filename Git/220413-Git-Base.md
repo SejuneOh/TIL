@@ -77,6 +77,7 @@ $ git status
 ```bash
 # git의 commit할 파일을 올리는 상태로 변경해준다. 단, 업무의 연관성 및 내용을 구분하여 
 # commit 을 해야하기 때문에 add할 때, 잘 나눠야한다
+$ git add fileName
 ```
 - git commit
 ```bash
