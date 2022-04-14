@@ -68,19 +68,22 @@ $ git diff main branchNm
 
 - Branch Models  
   Branch를 조금 더 효울적으로 사용하기 위한 모델링
-    - Git Flow  
+
+      - Git Flow
         (hotfix)- master -(release)- develop - feature
       개발과 운영을 나누어 관리하며, 각 단계가 명확하다.
       단점으로 복잡하다.
       <br/>
-     - GitHub Flow  
+      - GitHub Flow
       즉각적인 개발의 배포가 가능하며 단순하 모딜로 바로바로 배포되는 연구쪽에서 많이 사용한다
       <br/>
-     - Gitlab Flow  
+      - Gitlab Flow
       사용하지 않는다.
       <br/>
 
-- Git Flow에서 중점적으로 배워보자
+- Git Flow에서 중점적으로 배워보자  
+  _로직_
+  ![GitFlow](/resource/Gitflow.png)
 
 ---
 
