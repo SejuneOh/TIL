@@ -47,6 +47,12 @@ $ git config --global user.name 'userName'
 # 유저 이름 설정 삭제(github 계정과 동일시)
 $ git config --global --unset user.name  
 
+#이메일 설정(계정 메일과 동일하게 사용)
+$ git config --global user.email 'email'
+
+#이메일 설정 해제
+$ git config --globla --unset user.email
+
 # editor 설정
 $ git config --global core.editor "vim" 
 
