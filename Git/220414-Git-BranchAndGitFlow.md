@@ -85,6 +85,63 @@ $ git diff main branchNm
   _로직_
   ![GitFlow](/resource/Gitflow.png)
 
+  - Master : 운영, 사용자가 바라보는 소스
+  - HotFix : 긴급으로 수정후 배포해야하는 Branch
+  - Develop : 모든 개발 및 테스트를 하는 Branch
+  - Feature : Develop에서 기능 단위로 개발하는 Branch  
+    <br/>
+
+- Git-Flow 설치  
+  [Git-Flow](https://danielkummer.github.io/git-flow-cheatsheet/index.ko_KR.html) 설치 사이트
+
+- Homebrew를 통한 설치
+
+```bash
+$ brew install git-flow-avh
+```
+
+- Git-Flow init
+
+```bash
+$ git flow init
+```
+
+- Develop Branch에서 기능 단위 FeatureBranch 사용하기
+
+```bash
+$ git flow feature start featureBranchNm
+```
+
+- 기능 개발 완료
+
+```bash
+# feature 작업이 완료되어야 하는 시점  commit 후 실행 -> develop 브랜치로 이동하고
+# feature branch는 삭제
+$ git flow feature finish featureBranchNm
+```
+
+- Git Flow Release(배포)
+
+```bash
+# develop 계정에서
+$ git flow release start v0.1
+```
+
+- Finish Release
+
+```bash
+#
+$ git flow release finish v0.1
+```
+
+### 3단계의 걸쳐서 release를 한다
+
+1. Vim으로 버전 정보
+1. tagging(작성해야함)
+1. total 을 확인 한 후 배포
+1. devolop branch도 push 처음이라면 -u
+1. tag push (git push --tag)
+
 ---
 
 ## .gitignore?
