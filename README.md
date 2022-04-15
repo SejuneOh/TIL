@@ -11,7 +11,8 @@
 - Hexo(Make Hexo Blog)
 - HTML-CSS
 - MakrDown
-
+- Vim
+- VisualStudioCode
 ---
 
 _사람들하테 공유하고자하는 내용은 github Blog에 작성한다_<br/>
