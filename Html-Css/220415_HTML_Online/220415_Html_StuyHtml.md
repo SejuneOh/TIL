@@ -102,3 +102,16 @@ name : 정보의 종류(author, viewport 모바일 장치에만 영향이 있다
 ---
 
 ## Tip
+
+- 공백크기 설정
+  VSCode 설정 -> Edit Side 항목 2로 변경
+
+- [CodeOpen.io](https://codepen.io/pen/#anon-signup)  
+  개발 테스트를 편하게 할 수 있는 사이트
+
+- 브라우저 CSS 초기화 사이트  
+  [Reset Css](https://www.jsdelivr.com/package/npm/reset-css)  
+  _브라우저 마다 메인 화면의 영역 설정이 조금 씩 다르기 때문에 초기화 후 작업하는 것이 좋다_
+
+- Emmet
+  HTML, CSS를 간편하게 작성 할 수 있는 문법으로 VSCODE에는 이미 적용되어 있어 사용 법을 찾아보자
