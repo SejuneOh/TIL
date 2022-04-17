@@ -218,3 +218,81 @@ iherit 값을 이용하여 상속이 가능하다.
   background-color: orange;
 }
 ```
+
+---
+
+### 선택자의 우선순위
+_어떤 css 선언의 속성을 적용할 것인지 결정하는 우선순위를 정하는 방법을 말한다._
+
+- CSS 선택자의 점수를 붙여 합산한 값이 높을수로 우선순위가 높다. 
+- 점수가 같을경우 코드상 마지막으로 선언한 CSS 선택자가 적용된다. 
+
+점수를 계산하는 방법은 아래와 같다 .
+
+선택자| 점수|추가설명|
+:--|:--:|:--:
+important|최상위|
+인라인선언| 1000
+id|100
+class| 10|가상클래스 :hover, :active 클래스로 간주한다. :not(클래스)는 점수에 들어가지 않는다.
+tag|1| ::before ::after
+*| 0
+상속 | X
+
+
+```html
+<div class="color_green" id="color_yellow" style="color: orange">
+  Hello world!
+</div>
+```
+
+```css
+div {
+  /* 최상위 */
+  color: red !important;
+}
+
+#color_yellow {
+  /* 100 */
+  color: yellow;
+}
+
+.color_green {
+  /* 10 */
+  color: green;
+}
+
+div {
+  /* 1 */
+  color: blue;
+}
+
+* {
+  /* 0 */
+  color: darkblue;
+}
+
+body {
+  /* 상속 x */
+  color: violet;
+}
+```
+
+----
+
+
+## 가상 클래스, 가상요소
+
+- 가상클래스  
+	:hover => 어떤 요소의 마우스 커서가 올라가 있는 동안 선택  
+	:active => 어떤 요소에 마우스를 클릭하고 있는동안 선택  
+	:focus => 어떤 요소가 포커스가되면 선택 input, a, button, label  사용자랑 대화형 요소들만   
+				즉 포커스가 가능한 요소만 가능하다, 화면의 하나만 선택된다.  
+	:first-child => 어떤 선택자 형제 요소중 천째라면 선택 요소가 없으면 선택되지 않는다  
+	:last-child => 형제 요소중 마지막 요소를 찾는다.  
+	:nth-child(n): n번째 요소를 찾는다  (2n) 0부터 시작해서 2의배수 번째 자식이 선택된다. 홀수는 (2n+1) 첫번째 요소 제외(n+2)  
+	:not(xzy) => xyz가 아닌 abc 요소 선택
+- 가상요소  (**content는 무조건 사용해야한다!!!**)  
+	::before => abc 요소의 내부 앞에 내용 인라인 contents를 삽입  
+	::after => abc 요소의 내부 뒤에 내용 인라인 contents를 삽입 
+  
