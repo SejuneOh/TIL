@@ -2,8 +2,10 @@
 
 ## Goals
 1. JS의 컴파일 및 시스템 이해 
-1. 간단한 JS를 이용한 html 변경
 1. Front_End와 Back_End의 시스템 이해
+    
+1. 간단한 JS를 이용한 html 변경 및 서버로 시스템 이해하기
+    1. HTML 과 DOM
     1. 간단한 서버만들기 
 1. Html sementic markup
     1. Outliner
@@ -34,7 +36,27 @@ _위와 같이 JS또한 메모리의 변환의 연속으로 JS를 읽은 엔진�
 
 ---
 
+### Front_End와 Back_End의 시스템 이해
+
+1. 사용자의 Browser 화면 요청 (URL, PORT, QUERY)
+1. Server에서 최초 페이지(index.html) 전송
+1. browser html 렌더링 
+1. 화면의 html 구성 시작
+1. html 구문 외 만났을 때, 다시 서버에 js, css, img 다운로드
+1. js 엔진 언어 해석 시작
+1. 화면 구동. 
+
+_server는 html의 페이지와 정보를 전달하고 받을 수 있도록 하는 역할이다._</br>
+_client(front_end)는 서버의 데이터를 받아 사용자의 화면에 뿌려주고 꾸며주는 역할을 한다_</br>
+
+
+---
+
+
 ### 간단한 JS를 이용한 html 변경
+<br/>
+
+#### HTML 과 DOM의 이해
 
 _간단한 소스로 버튼 이벤트를 사용해서 html 변경을 해보자_<br/>
 _html와 javascript의 속성및 함수의 이해도를 알 수있는 목차이다_
@@ -68,7 +90,39 @@ function doWork() {
 - addEventListener('event', function)으로 이벤트 발생 시 해당 코드의 함수가 실행된다.
 
 _정리: JS에서도 DOM의 Element요소를 찾아 메모리에 접근하여 html을 수정할 수 다는 이해가 목적이다._
+<br/>
+
+
+### Node.js
+_node.js는 js가 사용될 수 있는 환경이 browser에서 os에서도 browser 없이 사용 할 수 있도록_ <br/>
+_구글에서 만든 어디서든 js를 구동할 수 있도록 만든 framework다. 서버에서도 많이 사용된다._
+
+```javascript
+const http = require('http');
+const fs = require('fs');
+function mySet(req, res) {
+  let url = req.url;
+
+  if (req.url === '/') {
+    url = '/index.html';
+  }
+
+  if (req.url === '/about') {
+    url = '/about.html';
+  }
+  res.writeHead(200);
+  var htmlFile = fs.readFileSync(__dirname + url);
+  res.end(htmlFile);
+};
+var app = http.createServer(mySet);
+app.listen(8080);
+```
+
+위와 같이 간단한 화면 전환 내용도 js로 만들어서 구동시킬 수 있다. 
+- /는 최상위 위치를 말한다.
+
 
 
 
 ---
+
