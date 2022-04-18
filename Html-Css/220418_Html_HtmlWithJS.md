@@ -126,3 +126,91 @@ app.listen(8080);
 
 ---
 
+### HTML SEMENTIC MARKUP
+
+html의 구성은 w3c의 권장하는 Sementic mark업의 기준을 따르자.<br/>
+과거의 div가 화면의 여역을 나누는 모든 부분이었다면, 현재는 화면의 구성을 <br/>
+의미 있는 tag로 구성하여.  유지 보수 및 html 구성의 완성도를 높일 수 있다. <br/>
+
+- Sementic Markup을 해야하는 이유 중 Outliner!!! <br/>
+검색엔징에서 내 사이트가 빠르고 비지니스 적으로 검색이 많이 되기 위해서는 Outliner를 잘 작성해야한다. <br/>
+
+- outliner 영향이  가는 태그 <br/>
+header, main, footer : 영향력 없음<br/>
+section, article, aside, nav : 영향력 있음<br/>
+해당 구역에서 h1~6 중요도를 지정해서 가질 수있으며, 부모 자식 관계 또한 포함이 된다.
+
+- 자신 h1~6 에서 설정한 제목 뒤에 자기보다 높으면 자신의 자식관계로 중요도가 낮아진다.
+
+
+_outliner란?_
+_화면의 구성에서 중요도를 기준으로 구성을 나누는 것으로, web화면 별 목차를 만든다._ <br/>
+_목차의 내용은 브라우저 검색시 우선순위가 될 수 있다._
+
+- 다음 소스로 분석해서 확인하자 
+
+```html 
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SB</title>
+</head>
+
+<body>
+  <!-- header 여러번 쓸 수 있다.-->
+  <header>
+    <h1>SimpleBitsdo your self</h1>
+    <nav>
+      <h2>
+        Main Navigation
+      </h2>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">WORK</a></li>
+        <li><a href="">BOOKS</a></li>
+        <li><a href="">ABOUT</a></li>
+      </ul>
+    </nav>
+  </header>
+  <!— main 한번만 쓸 수 있다.—>
+  <main>
+    <article>
+      <header>
+        <h2>SASS FOR WEB DESIGNERS</h2>
+      </header>
+      <div>
+        <!— Main 내용 —>
+      </div>
+      <footer>
+        <ul>
+          <li>Nov 13, 2013</li>
+          <li>books, css, sass</li>
+          <li>postsmpl.bt/19k7Qpj</li>
+        </ul>
+      </footer>
+    </article>
+  </main>
+  <!— aside —>
+  <aside>
+    <h3>side content</h3>
+    <h4>About Simplebits</h4>
+    <h4>bookt by dan</h4>
+    <h4>archives</h4>
+    <h4>elsewhere</h4>
+    <h4>what im working on</h4>
+    <h4>lastest project</h4>
+  </aside>
+  <!— footer —>
+</body>
+</html>
+```
+
+
+-tip <br/>
+main 태그 : 한 번만 사용할 수 있다.
+
+header, footer, aside: 여러면 사용해서 뷰포트 안의 구역에서 또 사용 할 수있다.
