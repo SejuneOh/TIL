@@ -11,6 +11,11 @@
     1. Opacity
     1. Font
     1. 문자
+    1. 배경
+    1. 배치 
+    1. Flex
+    1. 전환 
+    1. 변환
 
 ---
 
@@ -355,3 +360,99 @@ _position 속성의 값으로 absolute, fixed가 지정되는 요소는, display
 
 
 #### _Flex container : Flex 부모 요소의 자식한테 줄 수 있는 속성_
+
+- order : flex 아이템 순서
+  - 기본 : 0
+  - 값 : 순서(음수값을 지정할 수 있다.
+		
+- flex-grow : 증가 너비 비율 
+  - 기본 : 0 
+  - 값 : 숫자
+  - item이 찾이하는 축의 기준의 길이 만큼 길어진다.
+	
+- flex-shrink : 요소 아이템 감소 너비 비율
+  - 기본 : 1
+  - 숫자 : 감소 비율(0은 item이 줄어들지 않는다)
+		
+- flex-basis : flex item 공간(content 넓이 ) 배분 전 기본 너비
+  - 기본 : auto
+  - 단위 : px, em vw
+
+--- 
+
+
+### _전환_
+- transition : 속성명/지속시간(필수)/타이밍함수/대기시간
+  -	기본 : all 
+  - 요소의 전환(시작-끝) 효과를 지정하는 단축 속성
+		- 지속시간은 필수 요소
+    - 기본 : 0 
+    - 값 : 숫자 
+			
+- transition-property(속성명 width, height)
+  - 전환 효과를 사용할 속성 이름 지정
+  - 기본 : all 
+  - 값 : 속성이름
+
+- transition-duration : 지속시간
+  - 기본 : 0 
+			
+- transition-timing0function : 전환 효과의 타이민(easing)함수를 지정
+  - 기본 : ease(느리게-빠르게-느리게)
+  - 값 : 
+    - liner : 일정하게
+    - ease-in : 느리게 -빠르게
+    - ease-out : 빠르게 느리게
+    - ease-in-out : 느리게 빠르게 느리게
+    - cubic-bezier(n,n,n,n) : 자신만의 값을 지정
+    - steps : 잘 사용하지 않음
+			
+- transition-delay 
+  - 기본 : 0 (대기시간 없음)
+  - 값 : 시간
+
+--- 
+
+### _변환_
+
+_transform : 2d, 3d 기준으로 요소에 회전, 기울기 속성을 줄 수 있다._ 
+			
+- 2d 변환함수
+  - translate(x,y) : 요소를 이동(x축, y축)
+  - translateX(x) : x축 이동
+  - translateY(y) : y 축 이동
+  - scale (x,y) : 크기 x축 , y축 -> 하나만 적으면 둘다 적용된다.
+  - rotate(degree) : 회전 각도 (45deg)
+  - skew(x,y)
+  - skewX(x) :x 축 기울임
+  - skewY(x) :y 축 기울임
+  - matrix(n,n,n,n,n,n) 2차원 변환 효과를
+  - 사용하기 어려워 전자의 함수가 나왔기 때문에, 앞의 변환 함수를 사용하면된다.
+
+- 3d 변환함수
+  - translateZ(z)
+  - translate3d(x,y,z)
+  - scaleZ
+  - scale3d
+  - rotateX(x) : x축 기준으로 회전
+  - rotateY(y) : y축 기준으로 회전
+  - rotateZ(z) : z축 기준으로 회전
+  - rotate3d(x,y,z,a) : 회전 (x축, y축, z축, 각도)
+  - perspective(거리 px) : 원근법 거리 - 사용 할 것이라면 맨처음 써야한다.
+
+- perspective 속성  : 하위 요소를 관찰하는 원근거리를 지정가능한
+  - 단위 : px 
+				
+- 속성 함수와 차이점
+
+속성|적용대상|기준점 설정|
+--|--|--|
+perspective: 600px;| 		관찰대상의 부모 요소|	perspective-origin
+transform : perspective(600px)| 관찰 대상	|		transform-origin
+
+
+- backface-visibility : 3d 변환으로 회전된 요소의 뒨면 숨김 여부 
+  - 기본 : visible
+  - 값 : hidden
+
+---
