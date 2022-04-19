@@ -10,6 +10,7 @@
     1. Display
     1. Opacity
     1. Font
+    1. 문자
 
 ---
 
@@ -250,3 +251,107 @@ _글자, 문자에 대한 속성_
   - monospace : 고정너비 글꼴계얄
   =- cursive: 필기체 
   
+--- 
+### 문자
+_글자의 색상이이나 정렬 꾸며주는 속성을 말한다_</br>
+_아래의 속성과 의미를 정의해보자_
+
+속성|설명|기본값|다른 프로퍼티
+:--|:--:|:--|:--|
+color|글자의 색상을 지정해주는 속성|rgb(0,0,0) 검정|글자를 정해줄 수 있는 색상(red, blue #fff)
+text-align| 문자의 정렬 방식을 정해주는 속성 |left|underline, overline, line-through(중앙선, 취소선) 
+text-indent|문자의 들여쓰기 내려쓰기 속성을 사용할 수 있다.|0|px,em, rem / 음수 일 때 내어쓰기
+
+---
+<br/>
+
+### 배경
+_요소의 배경에 대한 설정을 해주는 속성이다._
+
+속성|설명|기본값|다른 프로퍼티
+:--|:--:|:--|:--|
+background-color|요소의 색상을 지정|transparent (투명)|색 지정
+background-image|배경이미지 출력을 해주는 속성|url("경로");|특징 이미지가 배경보다 작아지면 바둑판식으로 이미지를 출력한다.
+background-repeat| 요소의 배경 이미지 반복 설정 속성|repeat(이미지를 수직, 수평 반복)|repeat-x, repeat-y, no-repeat
+background-size|배경 이미지 크기 속성|auto(이미지의 본연의 크기)|단위, cover(비율의 길이가 큰 기준에 맞춘다.), contain(요소의 짧은 넓이의 기준으로 이미가 맞춰진다.)
+background-position|요소 배경의 이미지 위치 |0% 0% |top, bottom, left, right, center (단위를 입력하면, x축, y축 값이 적용된다.)
+background-attachment|배경 이미지 스크롤 특성|scroll(이미지가 요소를 따라서 같이 스크롤|scroll(이미지가 요소를 따라서 같이 스크롤|fixed(이미지가 뷰포트에 고정, 스크롤 x)
+
+---
+
+<br/>
+
+### 배치
+_요소의 위치 지정을 위한 기준을 설정해준다._
+
+- Position : 요소의 위치 지정을 위한 기준을 설정해준다.
+    - 기본 : static
+
+
+    - value : relative(요소 자신 기준), absolute(위치상 부모 요소 기준), fixed(뷰포트를 기준), sticky(스크롤 영역 기준) 
+    - relative : 이동 전, 위치는 시각전으로만 사라져있다. -> 자기 자신을 기준으로  위치를 변경하지 않는다.
+		왜냐하면 쌓이는 구조에서 자신의 위치가 옮겨주었을때, 배치의 기준과는 좀 달라진다.
+    - absolute: 위치상의 부모요소를 기준을 배치를 한다.
+        - 위치상의 기준으로 부모의 포지션이 정해져있지 않으면 조상의 위치를 기준으로 잡는다.
+    - fixed : 뷰포트 기준으로 배치한다.  
+
+- right, left, bottom, top, z-index
+    - 기본 : auto
+
+
+    - 단위 position 기준으로 위치를 지정할 수 있다.
+    - 음수를 사용할 수 있다.
+
+<br/>
+<br/>
+
+_요소의 display가 block속성으로 변경되는 특성_  
+
+
+_position 속성의 값으로 absolute, fixed가 지정되는 요소는, display가 속성이 block으로 자동변경_
+
+---
+
+### _요소 쌓임 순서(Stack order) : 어떤 요소가 사용자와 더 가깝게 있는지(위에 쌓이는지 결정)_
+1. 요소에 position 속성의 값이 있는 경우 위에 쌓이(기본 static 제외)
+1. 1번 조건이 같은 경우, z-index속성의 숫자 값이 높을 수록 위에 쌓임
+1. 1,2 번 조건까지 같은 경우 html의 나중에 작성된 구조일 수록 위에 쌓임
+
+- z-index : 요소의 쌓임 정도 지정
+	- 기본 : auto
+	- 값 : 숫자
+
+---
+
+### _Flex : 1차원의 레이아웃을 정렬하는 방법_
+
+#### _Flex container : Flex 기준이 되는 부모요소(내부 요소와 상관 없음)_
+- display : flex container의 출력 특성 
+	- flex : 블럭 요소와 같이 flex container 정의
+	- inline-flex : 인라인 요소와 같이 동작할 수있도록 명시한다. 
+		
+- flex-direction : 주축 설정
+	- 기본 : row 
+	- 값 : row-reverse, colum, colum-reverse
+		
+- flex-wrap : 요소들을 줄바꿈 여부를 지정한다 
+	- 기본 : nowrap : 묶음 없음, 줄바꿈 없음 
+	-	값 : wrap 여러줄로 묶음
+		
+- justify-content: 주축의 정렬 방법
+  - 기본 : flex-start(왼쪽)
+  - 값 : flex-end(오른쪽), center(가운데정렬), space-between, space-around
+		
+- align-content : 교차축의 여러줄 정렬 방법 줄바꿈 상태(2줄 이상) 및 공간이 있을때 작용한다. 
+  - 기본 : stretch(flex item를 시작점으로 정렬)
+  - 값 : flex-end, center, space-between, space-around
+
+
+- align_items : 교자축의 한줄 정렬 방식
+  - 기본 : stretch(flex item를 시작점으로 정렬)
+  - 값 : flex-end, center, space-between, space-around, baseline : 문자기준선에 정렬
+
+
+
+
+#### _Flex container : Flex 부모 요소의 자식한테 줄 수 있는 속성_
