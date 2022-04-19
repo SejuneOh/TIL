@@ -145,16 +145,20 @@ div {
     - value : thin, thick (속성을 주는 것 보다 정확한 값을 주는 것을 권장한다.)
 <br/>
 <br/>
+
 - border-style: 테두리 속성
     - default : none(선 없음)
     - value : soild : 실선 ,dotted : 점선 ... ,dashed : 파선 ---- ,double : 두줄 선 ====
 <br/>
 <br/>
+
 - border-color: 테두리 선 색
     - default : black 
     - value : 색의 값, transparent(투명)
+
 <br/>
 <br/>
+
 - 색의 표현(CSS의 전체에서 사용가능)
     - 색상이름 : 브라우저에서 제공하는 색의 이름으로 브라우저 마다 조금씩 다를 수 있다. (red, royalblue)
     - Hex 색상코드(16진수) : #00000, #ffffff
@@ -163,10 +167,11 @@ div {
     - hsl : : 색상, 채도, 명도, 투명도 (hsl(120, 100%, 50%, 10% ))
 <br/>
 <br/>
+
 - _border-위치, border-위치-width, border-위치-stlye, border-위치-color에 따른 속성도 줄 수 있다._
   
   
- - border-radius(둥글게)
+   - border-radius(둥글게)
     - defualt : 0 
     - 단위 : px, em, vw
     - _지정크기만 반지름의 원을 그려 모서리를 둥글게 만든다_
