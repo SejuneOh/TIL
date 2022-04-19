@@ -233,14 +233,13 @@ _글자, 문자에 대한 속성_
 - font-style
   - default : normal
   - value : italic
-<br/>
-<br/>
 
+<br/>
 
 - font-weight : 폰트 두께 
   - 기본: normal, 400 
   - value: 100~900 bold(700), border(부모요소보다 크게), lighter(상위 요소보다 더 얇게)
-<br/>
+
 <br/>
 
 - font-size: 글자의 크기 
@@ -253,7 +252,6 @@ _글자, 문자에 대한 속성_
   - 단위로 px : 한줄의  수직으로 가운데 정렬한다. 
 
 <br/>
-
 
 - font-family: 글꼴1, 글꼴2, 글꼴계열(serif 필수!) -> 브라우저가 순서대로 사용할 수 있는 글꼴을 선택한다.  
 폰트가 띄어쓰기가 있으면 ""로 묶어야한다.
