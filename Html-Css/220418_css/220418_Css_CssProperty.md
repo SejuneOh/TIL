@@ -393,7 +393,7 @@ _position 속성의 값으로 absolute, fixed가 지정되는 요소는, display
 
 - transition-duration : 지속시간
   - 기본 : 0
-- transition-timing0function : 전환 효과의 타이민(easing)함수를 지정
+- transition-timingfunction : 전환 효과의 타이민(easing)함수를 지정
   - 기본 : ease(느리게-빠르게-느리게)
   - 값 :
     - liner : 일정하게
