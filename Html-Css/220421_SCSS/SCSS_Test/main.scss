@@ -1,0 +1,326 @@
+// 가져오기!!
+@import url("./sub.scss"); //기본방법
+
+// 여러개의 css 파일을 간소화 하는 방법으로 가져올 수 있다.
+@import "./sub.scss", "/sub2.scss"; 
+
+// 변수화
+$color: royalblue;
+
+.container {
+
+  //중첩 
+  h1 {
+    //컴파일 시 해당 주석은 컴파일 되지 않는다.
+    // color: $color;
+    // 커파일 시 해당 주석은 컴파일되어 컴파일 파일에 주석 표시 된다.
+    /*background-color: orange;*/
+    font-size: 60px;
+  }
+}
+
+//중첩관련 학습
+
+.container {
+
+  // 자식요소를 선언하기 위해서는 앞부분에 작성하면된다.
+  >ul {
+    li {
+      font-size: 40px;
+
+      .name {
+        color: royalblue
+      }
+
+      .age {
+        color: orange
+      }
+    }
+  }
+}
+
+
+// 상위 선택자 참조
+
+.btn {
+  position: absolute;
+
+  //& == .btn 상위의 선택자를 참조한다
+  &.active {
+    color: red;
+  }
+}
+
+.list {
+  li {
+
+    // & == li  자신이 선언된 영역의 상위 선택자를 참조(치환)한다.
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+//상위 선택자를 참조해서 간소화 한다.
+.fs {
+  &-small {
+    font-size: 12px;
+  }
+
+  &-meduim {
+    font-size: 14px;
+  }
+
+  &-large {
+    font-size: 16px;
+  }
+}
+
+
+// 중첩된 속성
+.box {
+
+  // font-Name : -Name이 들어가는 속성은 네임스페이스가 같다고 표현한다.
+  // 네임스페이스란 이름을 통해 구분가능한 범위를 만들어 내는 것
+  font: {
+    weight: bold;
+    size: 10px;
+    family: sans-serif;
+  };
+
+  margin: {
+    top: 10px;
+    left: 20px;
+  };
+
+  padding: {
+    top: 10px;
+    bottom: 40px;
+    left: 20px;
+    right: 30px;
+  };
+
+}
+
+// 변수를 사용하기
+// 유호 범위가 있다. 상위에 선언하면 하위에 모두 사용가능하고
+// {안에 선언하면 중갈호 범위 안에서만 사용 할 수 있다.}
+// 변수의 값을 재할당 할 수 있다. 재할당되면 밑의 재할당 된 값으로 할당된다.
+.container {
+  $size: 200px;
+  position: fixed;
+  top: $size;
+  .item {
+    $size: 100x;
+    width: $size;
+    height: $size;
+    transform: translateX($size);
+  }
+  left: $size;
+}
+
+
+// SCSS의 연산
+// + - * / % 연산이 가능하다. 
+// / 연산자는 제대로 작용하지 않는다. font의 단축 속성이 /로 구분하기 때문에
+// / ()로 묶어 나누기 할 수 있다.
+// 변수를 통해서 $size/2 면 나눌 수 있다.
+// margin: 10px+20px / 2 앞의 연산자를 하면 연산으로 구분한다.
+// 산술연산시 같은 단위에서 사용해야한다.
+// calc()를 통해서 연산을 할 수있다.
+div {
+  width: 20px + 20px;
+  height: 40px - 10px;
+  font-size: 10px * 2;
+  margin: 30px / 2;
+  padding: 20px % 7;
+}
+
+.box {
+  background-color: royalblue;
+  width: calc(100% - 200px);
+  height: 100px;
+}
+
+// 재활용 MixIn
+// @mixin 키워드를 통해서 공통된 속성을 잴화용 가능하다
+// 재활용이 불가능하기 때문에 인수라는 개념을 제공한다.
+
+// .Mixin {
+//   width: 200px;
+//   height: 200px;
+//   background-color: orange;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+// .Mixin .item {
+//   width: 100px;
+//   height: 100px;
+//   background-color: royalblue;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+// }
+
+
+
+// 인수의 개념 함수처럼 사용가능하다.
+// 인수의 기본값을 지정할 수 있다.
+// 인수는 여러개 사용 할 수있다. 
+@mixin center($size: 100px, $color: tomato) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: $size;
+  height: $size;
+}
+
+.Mixin {
+  @include center(200px);
+  .item {
+    // 매개변수의 순서를 맞춰줘야한다.
+    // 굳이 인수를 지정할 필요없이 키워드 인수를 사용할 수 있다.
+    // 아래와 같이 사용할 수 있다.
+    @include center($color: green);
+  }
+  .box {
+    @include center();
+  }
+}
+
+// 반복문
+// 선택자에게 바로 $i를 바로 css 코드에 사용 할 수 없다.
+// #기호를 i 값을 보간하여 사용해야 한다.
+// css 작성 범위 코드에서는 바로 사용 할 수 있다.
+@for $i from 1 through 10 {
+  .box:nth-child(#{$i}) {
+    width: 100px;
+  }
+}
+
+// 함수
+// 재활용도 할 수 있고, 요소의 비율을 지정할 때 사용 할 수 있다.
+
+// 재활용 용도
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 연산의 목적으로 만들어진다.
+@function ratio($size, $ratio){
+  @return $size * $ratio
+}
+
+.box {
+  $width: 100px;
+  width: $width;
+  height: ratio($width, 1/2);
+  @include center();
+}
+
+// 색상 내장함수
+.colorBox {
+  $color: royalblue;
+
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: $color;
+
+  &:hover {
+    background-color: darken(royalblue, 10%);
+  }
+  
+  &.built-in {
+    // 내장함수
+    // background-color: $color;
+    
+    // 생상의 조합 
+    // background-color: mix(royalblue, red);
+
+    // 밝게 표현 10% 만큼 발게 표현해준다.
+    // background-color: lighten(royalblue, 10%);
+    
+    // 10% 만큼 어둡게 표현한다.
+    // background-color: darken(royalblue, 10%);
+
+    // 채도를 높여주는 내장함수
+    // background-color: saturate(royalblue, 40%);
+
+    // 채도를 낮춰준다
+    // background-color: desaturate(royalblue, 40%);
+
+    // 색상을 회색화 한다.
+    // background-color: gray(royalblue);
+
+    // 생상을 반전시켜준다,
+    // background-color: invert(royalblue);
+
+    //투명도를 지정해준다.
+    // 표준에서는 4개의 인수지만, csss에서는 2개의 인수면 충분하다.
+    background-color: rgba(royalblue, .5);
+  }
+}
+
+
+
+// 데이터 종류
+$nubmer: 1; // .5 1px , 1em 다 숫자
+$string: bold; // 프러퍼티의 값, 경로
+$color: red; // red blue는 색상이댜 #fffff
+$boolean: true; // false
+$null: null; //null은 속성을 사용 안하도록  할 수 있다.
+
+// 배열과 유사하다. 1부터 시작한다.
+$list: orange, royalblue, yellow;
+
+// 객체 대이터와 비슷하다 key, value로 구분하다.
+$map: (
+  o: orange,
+  r: royalblue,
+  y: yellow
+);
+
+// foreach의 개념과 같다
+// list를 @each로 사용하기
+@each $c in $list {
+  .box {
+    color: $c;
+  }
+}
+
+@each $k, $v in $map {
+  .box-#{$k} {
+    color: $v;
+  }
+}
+
+// 재활용 @content 사용하기
+// include를 사용할 때 중갈호 안의 내용이 @content에 내용이 들어간다.
+@mixin left-top{
+  position: absolute;
+  top: 0;
+  left: 0;
+  @content;
+}
+
+.container{
+  width: 100px;
+  height: 100px;
+  @include left-top();
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  @include left-top(){
+    bottom: 0;
+    right: 0;
+    margin: auto;
+  }
+}

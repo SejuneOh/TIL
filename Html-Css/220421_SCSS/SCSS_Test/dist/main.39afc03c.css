@@ -1,0 +1,212 @@
+body .container {
+  background-color: orange;
+}
+body .container {
+  background-color: orange;
+}
+
+body {
+  background-color: rosybrown;
+}
+
+.container h1 {
+  /*background-color: orange;*/
+  font-size: 60px;
+}
+
+.container > ul li {
+  font-size: 40px;
+}
+.container > ul li .name {
+  color: royalblue;
+}
+.container > ul li .age {
+  color: orange;
+}
+
+.btn {
+  position: absolute;
+}
+.btn.active {
+  color: red;
+}
+
+.list li:last-child {
+  margin-right: 0;
+}
+
+.fs-small {
+  font-size: 12px;
+}
+.fs-meduim {
+  font-size: 14px;
+}
+.fs-large {
+  font-size: 16px;
+}
+
+.box {
+  font-weight: bold;
+  font-size: 10px;
+  font-family: sans-serif;
+  margin-top: 10px;
+  margin-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 40px;
+  padding-left: 20px;
+  padding-right: 30px;
+}
+
+.container {
+  position: fixed;
+  top: 200px;
+  left: 100x;
+}
+.container .item {
+  width: 100x;
+  height: 100x;
+  transform: translateX(100x);
+}
+
+div {
+  width: 40px;
+  height: 30px;
+  font-size: 20px;
+  margin: 30px/2;
+  padding: 6px;
+}
+
+.box {
+  background-color: royalblue;
+  width: calc(100% - 200px);
+  height: 100px;
+}
+
+.Mixin {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
+}
+.Mixin .item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+}
+.Mixin .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+}
+
+.box:nth-child(1) {
+  width: 100px;
+}
+
+.box:nth-child(2) {
+  width: 100px;
+}
+
+.box:nth-child(3) {
+  width: 100px;
+}
+
+.box:nth-child(4) {
+  width: 100px;
+}
+
+.box:nth-child(5) {
+  width: 100px;
+}
+
+.box:nth-child(6) {
+  width: 100px;
+}
+
+.box:nth-child(7) {
+  width: 100px;
+}
+
+.box:nth-child(8) {
+  width: 100px;
+}
+
+.box:nth-child(9) {
+  width: 100px;
+}
+
+.box:nth-child(10) {
+  width: 100px;
+}
+
+.box {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.colorBox {
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: royalblue;
+}
+.colorBox:hover {
+  background-color: #214cce;
+}
+.colorBox.built-in {
+  background-color: rgba(65, 105, 225, 0.5);
+}
+
+.box {
+  color: orange;
+}
+
+.box {
+  color: royalblue;
+}
+
+.box {
+  color: yellow;
+}
+
+.box-o {
+  color: orange;
+}
+
+.box-r {
+  color: royalblue;
+}
+
+.box-y {
+  color: yellow;
+}
+
+.container {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+}
+
+/*# sourceMappingURL=/main.39afc03c.css.map */
