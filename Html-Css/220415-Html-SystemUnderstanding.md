@@ -49,8 +49,9 @@ _즉, 메모리의 저장방식을 주소와 값을 이용하여 사전을 만�
 1. CPU 계산작업 요청
 1. 결과 값 도출
 
-- C#, HTML의 차이  
-  2~5번 작업을 컴파일러가 하고 수행할지 바로 작동해서 표현할지의 차이, 전자 C#, 후자 HTML
+- Interpreter Language vs Compiler
+  - interpreter language는 작성한 코드가 바로 실행되는 코드를 말하고
+  - compiler는 작성된 코드를 compiler가 먼저 해석하고 실행 여부를 판단하고 실행하는 언어 변역기입니다.
 
 ---
 
