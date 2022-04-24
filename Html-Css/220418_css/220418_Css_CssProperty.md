@@ -140,11 +140,18 @@ div {
 
 - border-width :
 
-  - margin padding 단축 속성과 같다. - default : medium 중간두께 - value : thin, thick (속성을 주는 것 보다 정확한 값을 주는 것을 권장한다.)
+  - 단축 속성 margin padding 과 같다.
+  - default : medium 중간두께
+  - value : thin, thick (속성을 주는 것 보다 정확한 값을 주는 것을 권장한다.)
+
     <br/>
     <br/>
 
-- border-style: 테두리 속성 - default : none(선 없음) - value : soild : 실선 ,dotted : 점선 ... ,dashed : 파선 ---- ,double : 두줄 선 ====
+- border-style: 테두리 속성
+
+  - default : none(선 없음)
+  - value : soild : 실선 ,dotted : 점선 ... ,dashed : 파선 ---- ,double : 두줄 선 ====
+
   <br/>
   <br/>
 
