@@ -35,9 +35,10 @@
 
 ### 헷갈리지 않게 기억해야하는 속성
 
-- position중 속성을 사용하는 요소는 block 요소로 바뀐다.
-- position: fixed, absolute 속성을 사용하면, 내용만큼의 넓이와 높이를 최소한으로 가질려고한다. 넓이 주는 것 필수
-- 인라인 속성의 중앙 맞춤은 line-height 속성을 height 만큼 주면 중앙 맞춤한다.
+- _position중 속성을 사용하는 요소는 block 요소로 바뀐다._
+
+- _position: fixed, absolute 속성을 사용하면, 내용만큼의 넓이와 높이를 최소한으로 가질려고한다. 넓이 주는 것 필수_
+- _인라인 속성의 중앙 맞춤은 line-height 속성을 height 만큼 주면 중앙 맞춤한다._
 
 ```css
 span {
