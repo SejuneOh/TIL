@@ -23,8 +23,8 @@ _이해의 도움이 되기 위해서는 메모리의 Stack, Heap의 구조를 �
    - 전역적으로 사용 할 수 있는 global의 환경을 만든다.
    - 그 다음 기초적인 window의 환경을 만든다. 여기서 window는 browser의 사용하는 api 및 속성을 사용하는 객체 이다.
    - 전역 변수로 var를 메모리에 변수를 등록하고, heap 메모리에 등록하는 참조 형식의 function을 등록한다.
-   - function(선언된 함수만), var은 선언, 할당한다.
-     - 단, var은 function 안에서는 function이 실행될 때 선언 및 할당한다.
+   - function(선언된 함수만), var은 선언의 객체만 생성된다.
+     - 단, var은 function 안에서 있을 때는 function callStack에서 실행될 때, 서언된다.
 
 1. 코드의 실행단계
    - 실행 단계에서는 한줄 씩 코드를 읽어가며 값을 할당한다.
