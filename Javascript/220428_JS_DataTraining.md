@@ -6,6 +6,7 @@
 1. lodash 사용법
 1. JSON 알아보기
 1. Storage
+1. OMDB API
 
 ---
 
@@ -218,6 +219,51 @@ console.log(obj);
 
 // 3. 수정후 다시 string 형태의 값으로 저장한다.
 localStorage.setItem("user", JSON.stringify(obj));
+```
+
+---
+
+### OMDB API
+
+_영화 정보 및 내용을 가져 올 수 있는 사이트로 API를 통해서 데이터를 가져올 수 있다_  
+_[OMDB SITE 이동](https://www.omdbapi.com/)_
+
+**WEB API의 이해 하기**
+
+- queryString  
+  : 주소속성=value&속성=value&속성=value으로 server에 필요 parameter를 통해서 데이터를 요청한다.
+
+  ```url
+  # json format
+  http://www.omdbapi.com/?apikey=[yourkey]&s=frozen
+  ```
+
+- node.js 및 브라우저에서 사용할 수있는 http 통신을 처리해주는 axio 모듈을 사용해 보자
+- axios 설치하기
+
+```bash
+# 설치
+$ npm install axios
+```
+
+- axios queryString 사용하기  
+  webquery를 axios 모듈을 통해서 가져오기.
+
+```js
+import axios from "axios";
+
+function fetchMovies() {
+  axios
+    // then에 callback function을 이용해서  데이터를 가져와서 푼다.
+    .get("https://www.omdbapi.com/?apikey=[yourAPI-KEY]&s=frozen")
+    .then((res) => {
+      const h1El = document.querySelector("h1");
+      const imgEl = document.querySelector("img");
+
+      h1El.textContent = res.data.Search[0].Title;
+      imgEl.src = res.data.Search[0].Poster;
+    });
+}
 ```
 
 ---
