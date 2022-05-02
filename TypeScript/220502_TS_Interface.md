@@ -141,3 +141,50 @@ const man: Person = {
 // 에러가 발생한다. reaonly 속성은, 읽기 전용인다.
 man.gender = "female";
 ```
+
+**Type alias vs Interface**
+
+- function의 생성의 차이점
+
+```ts
+type EatType = (food: string) => void;
+
+interface IEat {
+  (food: string): void;
+}
+```
+
+- arry의 차이점
+
+```ts
+type tArray = string[];
+
+interface IArray {
+  [index: number]: string;
+}
+```
+
+- 교차 상속(여러가 타입을 상속 받을 때)
+
+```ts
+interface ErrorHandling {
+  success: boolean;
+  error?: { message: string };
+}
+
+interface ArtistData {
+  artist: { name: string }[];
+}
+
+type ArtistResType = ArtistData & ErrorHandling;
+interface IArtistResType extends ArtistData, ErrorHandling {}
+```
+
+- union type
+
+  - type alias에서는 같은 | 기호를 써서 union 타입을 쓰면된다.
+  - 하지만 interface와 class 에서는 상속이 불가능 하다.
+
+- Declaration Merging Interface
+  - 같은 이름으로 선언된 여러개의 인터페이는 자동으로 합쳐진다.(선언 속성도 합쳐진다.)
+  - type alias는 불가능하다. (Duplicate indentifier Error)
