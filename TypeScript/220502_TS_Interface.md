@@ -86,3 +86,58 @@ class Person implements IPerson {
 ```
 
 **Interface의 상속**
+
+- 구조적으로 다른 인터페이스의 상속을 받아 객체를 구현한다.
+- 같은 구조의 추가적인 타입이 필요할 때, 상속으로 타입 속성을 추가할 수 있다.
+
+```ts
+interface IPersion {
+  name: string;
+  age?: number;
+}
+
+interface IKorean extends IPersion {
+  city: string;
+}
+
+const koeran: IKorean = {
+  name: "david",
+  age: 20,
+  city: "korea",
+};
+```
+
+**function Interface**
+
+- 인터페이스의 함수를 설정하였을 때, interface의 타입의 변수에는 같은 형태의 함수가 선언되어야 한다.
+- 인터페이스의 타입 체는 변수에 인터페이스를 할당 할 때, 변수가 함수를 호출 할때 타입의 비교 시점이 다르다.
+
+```ts
+interface HelloPerson {
+  (name: string, age?: number): void;
+}
+// age? 값을 age로 사용 할 수 없다. 왜냐하면, age의 타입은 optional로 인한  number | undefined로
+// 타입의 범위가 달라서, 타입을 설정 해줘야다 한다.
+const helloPerson: HelloPerson = function (name: string, age?: number): void {
+  consoloe.log(`안녕하세요 ${name} 입니다.`);
+};
+```
+
+**ReadOnly Interface**
+
+- 인터페이스 속성 값이 변화가 필요 없이 읽기만 원한다면 readonly 키워들 사용한다.
+
+```ts
+interface Person {
+  name: string;
+  age: number;
+  readonly gender: string;
+}
+
+const man: Person = {
+  name: "mark",
+  gender: "male",
+};
+// 에러가 발생한다. reaonly 속성은, 읽기 전용인다.
+man.gender = "female";
+```
