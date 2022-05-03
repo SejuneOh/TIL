@@ -19,3 +19,37 @@ function hello<T>(msg: T): T {
 // 리턴하는 상위의 타입의 내장함수를 사용할 수 있다.
 const a = hello("Mark");
 ```
+
+### 작성방식
+
+- 호출시에 Generic의 타입을 지정할 수 있다.
+- Generic 함수 호출 시, 호출할때의 타입을 추론하여 사용한다.
+
+```ts
+function callGeneric<T, U>(msg: T, comment: U): T {
+  return msg;
+}
+
+callGeneric<string>("문자열"); // "문자열"의 타입을 갖는다.
+callGeneric<number>(2022);
+```
+
+### Generic의 Tuple, Array
+
+- 매개변수의 배열로 받기
+- 배열의 타입이 여러개의 타입으로 들어올 경우, union type을 갖는다.
+- 여러개의 타입으로 리턴하는 함수에서, tuple로 정의한 함수로 타입을 확실하게 한다.
+
+  ```js
+  // 배열의 타입이  여러개의 타입으로 들어올 경우, union type을 갖는다.
+  function func<T>(msg: T[]): T {
+    return msg[0];
+  }
+
+  function functTuple<T, K>(msg: [T, K]): T {
+    return msg[0];
+  }
+
+  // string | number : union type
+  func("a", 20);
+  ```
