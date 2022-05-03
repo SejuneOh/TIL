@@ -34,6 +34,8 @@ callGeneric<string>("문자열"); // "문자열"의 타입을 갖는다.
 callGeneric<number>(2022);
 ```
 
+---
+
 ### Generic의 Tuple, Array
 
 - 매개변수의 배열로 받기
@@ -53,3 +55,74 @@ callGeneric<number>(2022);
   // string | number : union type
   func("a", 20);
   ```
+
+---
+
+### Generic 함수와 Interface
+
+- 기존의 작성 방식에서, 타입의 항목에, Generic으로 구현해준다.
+
+  ```ts
+  type helloFunc = <T>(msg: T) => T;
+
+  const hello1: helloFunc = <T>(msg: T): T => {
+    return msg;
+  };
+
+  interface IGeneric {
+    <T>(msg: T): T;
+  }
+
+  const vGeneric: IGeneric = <T>(msg: T): T => {
+    return msg;
+  };
+  ```
+
+### Class의 Generic
+
+- 클래스의 Generic은 클래스 레벨의 타입선언이 필요하다.
+
+```ts
+class Person<T, K> {
+  private _name: T;
+  private _age: K;
+
+  constructor(name: T, age: K) {
+    this._name = name;
+    this._age = age;
+  }
+}
+```
+
+### Generic Extends
+
+- Generic의 Extends는 타입의 제한을 준다.
+- 타입의 상속이 아닌, 타입을 제한하는 역할로 작용한다.
+
+  ```ts
+  class Person<T extends string | number> {
+    private _name: T;
+
+    constructor(name: T, age: K) {
+      this._name = name;
+    }
+  }
+  ```
+
+---
+
+### keyof Generic
+
+```ts
+function getProp<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key];
+}
+
+function setProp<T, K extends keyof T>(
+  obj: T,
+  key: K,
+  value: T[keyof T]
+): void {
+  obj[key] = value;
+}
+```
