@@ -109,3 +109,15 @@ $ npm i -D sass-loader sass
 ```bash
 $ npm i -D @babel/core @babel/preset-env @babel/plugin-transform-runtime
 ```
+
+---
+
+### NPX, DIGIT
+
+- 간편하게, 기존의 프로젝트를 가져와서
+- 처음부터 버전관리를 할 수있다.
+- 버전관리가 되지 않는 프로젝트를 관리하기 위해서 사용한다.
+
+```bash
+$ npx degit githubURL Folder
+```
