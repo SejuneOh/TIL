@@ -35,7 +35,7 @@ function solution1(n, lost, reserve) {
 
 
 
-// 무엇이 문제이지 ... ???
+// 무엇이 문제이지 ... ??
 // 같이 고민해보자...
 function solution2(n, lost, reserve) {
 
