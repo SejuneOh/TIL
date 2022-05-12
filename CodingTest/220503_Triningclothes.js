@@ -4,7 +4,8 @@
 
 
 
-solution2(5, [2, 4], [1, 3, 5]);
+// solution2(8, [3, 7], [2, 4]);
+Test();
 
 // 1. 답은 맞았는데  정확도가 떨어짐
 
@@ -39,11 +40,18 @@ function solution1(n, lost, reserve) {
 // 같이 고민해보자...
 function solution2(n, lost, reserve) {
 
+  console.log("solution");
   var difLost = new Set([...lost].filter(x => !new Set(reserve).has(x)));
+
   var difRes = new Set([...reserve].filter(x => !new Set(lost).has(x)));
 
+  console.log(difLost);
+  console.log(difRes);
+
   difRes.forEach(x => {
+    console.log("x", x)
     let val = difLost.values().next().value;
+    console.log("val:", val);
     if (x - val === 1 || x - val === -1)
       difLost.delete(val);
   });
