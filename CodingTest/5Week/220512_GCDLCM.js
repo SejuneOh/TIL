@@ -4,7 +4,7 @@
 //  두 수 a,b에서 최대공약수(g)와 최소공배수(l)는 다음 관계가 성립한다.
 //  ab = gl
 //  최소 공배수를 구할 수 있으면,  최대공약수는 ab/g = l 공식이 나온다.
-console.log(solution(3, 12));
+console.log(solution2(3, 12));
 
 function solution(n, m) {
   var answer = [];
@@ -27,3 +27,14 @@ function solution(n, m) {
   console.log(answer);
   return answer;
 }
+
+
+function solution2(n, m) {
+  return [GCD(n, m), LCM(n, m)];
+}
+
+function GCD(a, b) {
+  return b ? GCD(b, a % b) : Math.abs(a);
+}
+
+function LCM(a, b) { return (a * b) / GCD(a, b) }
