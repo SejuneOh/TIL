@@ -106,6 +106,7 @@ Memoization하여  모든 요소가 랜더링 하는 것을 방지한다.
 
 ### 4. 값의 변화가 생긱 변수 useMemo 사용하기 
 - 어떤 특정한 "값"을 저장하여 연산하고 useMemo를 사용해서 Memoization한다. 
+- 다른 변화에 따라 같이 값이 다시 랜더링되는 것을 방지한다. 
 
 
 ```js 
@@ -148,3 +149,5 @@ import "./CommentItem.css";
 export default memo(CommentItem)
 // export default CommentItem
 ```
+
+---
