@@ -119,3 +119,6 @@ const Input = styled.input.attrs(props => ({
 </div>
 
 ```
+
+- GlobalStyle = createGlobalStyle를 사용해서 전역적인 스타일을 설정할 수 있다.
+  - 선언한 컴포넌트 모두든 부분에 적용된다. 
