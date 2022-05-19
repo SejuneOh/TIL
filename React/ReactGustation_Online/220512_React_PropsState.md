@@ -187,7 +187,7 @@ class Clock extends React.Component {
 ### State 알고 잇어야 할 것들
 
 - 직접 수정해서는 안된다. setState를 정하고 거기서 변경하는것을 원칙으로 한다.
-- State 업데이트는 비동기적일 수 있따. setState에서 state, props를 받아 수정하는 것을 원장한다.
+- State 업데이트는 비동기적일 수 있다. setState에서 state, props를 받아 수정하는 것을 권장한다.
 - State는 다양한 독립 적인 변수이며, 독립적으로 업데이트가 가능합니다.
 - State가 소유하고 설정한 컴포넌트 이외에는 어떠한 컴포넌트에도 접근 할 수 없다.
 
