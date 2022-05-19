@@ -51,7 +51,7 @@ export default memo(ContentItems)
 ```
 
 
-### 2.컴포는트 Memoization 성능 검사
+### 2.컴포넌트 Memoization 성능 검사
 - Profiler API를 통한 검사
 - 렌더링하는 빈도와 비용을 측정합니다.
 -  parameter : id / callback function
