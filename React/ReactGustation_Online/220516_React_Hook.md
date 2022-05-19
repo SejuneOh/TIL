@@ -83,5 +83,56 @@ useEffect(() => {
 
 
 
-### useLayoutEffect
+### useContext
 
+```txt
+import한 context 컴포넌트의 context를 받아 props에 context를 설정 할 수 있는 Hook입니다.
+```
+
+```js
+import Context from 'Context Path' 
+
+const value = useContext(Context);
+```
+- Hook의 호출하는 가장 가까운 Context Component에서 props를 전달 받습니다.
+- 호출한 컴포넌트의 context가 변경되면 리렌더링 됩니다. 
+
+
+### useReducer
+
+```txt
+usetState를 대치하는 함수입니다. state값과 action(사용타입)에 따른 함수를 사용하여 새로운  state를 반환홥니다. 사용시 dispatch 함수와 짝으로 사용됩니다.
+
+```
+- state 사이에서 의존성이 높은경우 사용합니다.
+
+```js
+const [state, dispatch] = useReducer(reducer, initialArg, init);
+```
+
+```js
+const initialState = {count: 0};
+
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return {count: state.count + 1};
+    case 'decrement':
+      return {count: state.count - 1};
+    default:
+      throw new Error();
+  }
+}
+
+function Counter() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  return (
+    <>
+      Count: {state.count}
+      <button onClick={() => dispatch({type: 'decrement'})}>-</button>
+      <button onClick={() => dispatch({type: 'increment'})}>+</button>
+    </>
+  );
+}
+// React Doc 참조 
+```
