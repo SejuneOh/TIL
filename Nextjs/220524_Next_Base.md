@@ -141,3 +141,47 @@ export async function getStaticProps(cotext) {
 - React에서의 Server-Side를 이용한 데이터 및 관리 코드로 작성해야한다.
 
 위의 요소를 가지고있는 Next.js로 구현할 수 있다.
+
+
+### Page Rounting
+**페이지 폴더의 구성이 화면의 페이리 라우팅 구성과 동일하게 작동한다.**
+
+### Use Link Client-Side
+next.js에서 Link tag를 지원한다. 기존 a tag와 다른점은 무엇이 있을까? 
+
+- Client Rendering의 차이
+  - 필요 부분만 Re-Rendering한다.
+
+  - a tag는 전체 화면을 재구성한다.
+  - a tag 보다 빠른 화면 구성이 가능하다.
+  - 화면의 Property 같은 경우에도 기존으로 유지되는 것을 볼 수 있는데 이거슨 화면에 전체가 아닌 필요 요소만 rerenderging 되는 것을 말한다.
+- 내부 화면의 Routing일때 사용하면 좋다.
+
+```js
+import Link from 'next/link'
+import React from 'react'
+
+export default function FirstPost() {
+  return (
+    <>
+      <h1>First Blog!!!</h1>
+      <Link href="/">Back to home</Link>
+    </>
+
+  )
+}
+```
+
+### Code Splitting & Learn Prefetching
+
+#### **Code Splitting**
+
+화면의 구성을 부분을 나누어 코드를 작성하면 필요 부분이 변화가 있을 때만 렌더링을 하기 때문에,  
+구성을 잘 나눠서 작성하면 브라우저의 Rendering 속도에 있어서 빠르게 구성이 가능 하는 것을 말한다.
+
+#### **Learn Prefetching**
+
+빌드 후 첫 화면에 Link tag가 있다면, 진입이 가능한 화면이 있다면 미리 받아와서 구현을 하기 때문에  
+빠른 속도로 이동이 가능하다.
+
+
