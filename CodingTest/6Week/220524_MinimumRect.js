@@ -18,5 +18,3 @@ function solution(sizes) {
 }
 
 
-console.log(solution(size));
-
