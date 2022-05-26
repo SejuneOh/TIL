@@ -13,10 +13,6 @@ function solution(s, n) {
     // 아스키코드 변환
     tmpArr.push(s.charAt(i).charCodeAt());
   }
-
-
-
-
   const result = tmpArr.map(el => {
     // 소문자
     if (el >= 65 && el <= 90) {
@@ -31,7 +27,6 @@ function solution(s, n) {
   })
 
   result.forEach(element => {
-    // 문자변환
     answer += String.fromCharCode(element)
   })
 
