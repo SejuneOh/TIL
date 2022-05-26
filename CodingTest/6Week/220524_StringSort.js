@@ -7,7 +7,7 @@
 const strings = ["abce", "abcd", "cdx"]
 const n = 2
 
-function solution(strings, n) {
+function solution1(strings, n) {
   var answer = [];
   answer = strings.map(el => {
     return [el.charAt(n), el];
@@ -17,4 +17,5 @@ function solution(strings, n) {
 }
 
 
-console.log(solution(strings, n));
+
+console.log(solution2(strings, n));
