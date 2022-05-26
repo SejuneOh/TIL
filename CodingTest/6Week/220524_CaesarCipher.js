@@ -1,7 +1,8 @@
 
 
-const s = "a B zd"
-const n = 4
+
+const s = "P"
+const n = 15
 
 function solution(s, n) {
   var answer = '';
@@ -9,23 +10,28 @@ function solution(s, n) {
   //  string 분리
   const tmpArr = new Array()
   for (i = 0; i < s.length; i++) {
+    // 아스키코드 변환
     tmpArr.push(s.charAt(i).charCodeAt());
   }
 
-  console.log(tmpArr)
+
 
 
   const result = tmpArr.map(el => {
+    // 소문자
     if (el >= 65 && el <= 90) {
-      return (el + n) > 90 ? 65 + (n - 1) : el + n
+      return (el + n) > 90 ? el + n - 26 : el + n
+      // 공백
     } else if (el === 32) {
       return el
+      // 대문자
     } else {
-      return (el + n) > 122 ? 97 + (n - 1) : el + n
+      return (el + n) > 122 ? el + n - 26 : el + n
     }
   })
 
   result.forEach(element => {
+    // 문자변환
     answer += String.fromCharCode(element)
   })
 
