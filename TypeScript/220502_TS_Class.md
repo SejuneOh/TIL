@@ -95,14 +95,15 @@ class Person {
 
 - 변수의 선언와 생성을 초기화 생성자를 통해서 만들 수 있다.
 - 초기화 함수를 통해서 변수를 선언하려면, 접근제어자를 통하여 생성한다.
+- 생성자 함수의 property의 매계변수의 접근제한자와 타입의 정의는, 정의 및 할당을 동시에 해준다.
 
 ```ts
 class Person {
   // 생성자
 
   constructor(public name: string, public age: number) {
-    this.name = name;
-    this.age = age;
+    // this.name = name;
+    // this.age = age;
   }
 }
 ```
@@ -252,7 +253,7 @@ const c = new child(30);
 ### Abstract Class
 
 - 완전하지 않는 클래스를 표현하여, new를 통해서 생성 불가능하다.
-- 상속을 통해서 와전한 객체를 만들 수 있다.
+- 상속을 통해서 완전한 객체를 만들 수 있다.
 - 클래스의 이름과 기능이 완전하지 않는 요소에 abstract 키워들 붙여야 한다.
 - 가상클래스의 선언 부분은 상속받은 클래스에서 구현을 해줘야 한다.
 
