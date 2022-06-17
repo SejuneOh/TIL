@@ -34,3 +34,9 @@ $ git reset --hard HEAD~3
 # -no--commit 나중에 한번에 commit을 하겠다는 option
 $ git revert --no-commit HEAD~3..
 ```
+
+- push 전 git 되돌리기
+
+```
+$ git reset --hard bracncode 
+```
